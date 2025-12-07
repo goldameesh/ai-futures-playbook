@@ -202,16 +202,6 @@
             color: var(--royal-blue);
         }
 
-        .btn-success {
-            background: var(--success);
-            color: var(--white);
-        }
-
-        .btn-success:hover {
-            background: #059669;
-            transform: translateY(-2px);
-        }
-
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -246,7 +236,6 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: all 0.3s;
             border-top: 4px solid var(--gold);
-            position: relative;
         }
 
         .card:hover {
@@ -408,95 +397,14 @@
             font-size: 0.95rem;
         }
 
-        .phase-card {
-            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
-            border-left: 6px solid var(--gold);
+        .disclaimer {
+            background: #fee2e2;
+            border-left: 4px solid var(--danger);
+            padding: 1.5rem;
             margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 10px;
-        }
-
-        .phase-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .phase-number {
-            background: var(--royal-blue);
-            color: var(--gold);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .phase-title h2 {
-            color: var(--royal-blue);
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .phase-subtitle {
-            color: var(--text-gray);
+            border-radius: 8px;
             font-size: 0.9rem;
-        }
-
-        .accordion {
-            margin: 1rem 0;
-        }
-
-        .accordion-item {
-            background: var(--white);
-            margin-bottom: 1rem;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .accordion-header {
-            background: var(--royal-blue);
-            color: var(--white);
-            padding: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.3s;
-        }
-
-        .accordion-header:hover {
-            background: var(--light-blue);
-        }
-
-        .accordion-header h3 {
-            margin: 0;
-            color: var(--white);
-        }
-
-        .accordion-icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-        }
-
-        .accordion-item.active .accordion-icon {
-            transform: rotate(180deg);
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 1.5rem;
-        }
-
-        .accordion-item.active .accordion-content {
-            max-height: 5000px;
-            padding: 1.5rem;
+            color: var(--dark-gray);
         }
 
         .interactive-box {
@@ -511,43 +419,6 @@
         .interactive-box h3 {
             color: var(--gold);
             margin-bottom: 1rem;
-        }
-
-        .checklist {
-            list-style: none;
-            padding: 0;
-        }
-
-        .checklist li {
-            padding: 0.75rem;
-            margin: 0.5rem 0;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .checklist li:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        .checklist input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
-
-        .disclaimer {
-            background: #fee2e2;
-            border-left: 4px solid var(--danger);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: var(--dark-gray);
         }
 
         .stats-grid {
@@ -573,32 +444,30 @@
             margin-bottom: 0.5rem;
         }
 
-        .faq-item {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .faq-question {
-            font-weight: 600;
-            color: var(--royal-blue);
-            margin-bottom: 0.5rem;
-            cursor: pointer;
+        .filter-buttons {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            justify-content: center;
         }
 
-        .faq-answer {
-            color: var(--text-gray);
-            margin-top: 1rem;
-            display: none;
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--royal-blue);
+            background: var(--white);
+            color: var(--royal-blue);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .faq-item.active .faq-answer {
-            display: block;
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--royal-blue);
+            color: var(--white);
         }
 
         footer {
@@ -641,31 +510,6 @@
             font-size: 0.9rem;
         }
 
-        .filter-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-            justify-content: center;
-        }
-
-        .filter-btn {
-            padding: 0.75rem 1.5rem;
-            border: 2px solid var(--royal-blue);
-            background: var(--white);
-            color: var(--royal-blue);
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--royal-blue);
-            color: var(--white);
-        }
-
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -690,31 +534,25 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        @media print {
-            header, footer, .cta-buttons, .mobile-menu-btn {
-                display: none;
-            }
-        }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="#" class="logo">
+            <a href="#" class="logo" onclick="showSection('home'); return false;">
                 <span>🚀</span>
                 <span>AI Futures Playbook</span>
             </a>
             <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
             <ul class="nav-links">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#phases" class="nav-link">Learning Phases</a></li>
-                <li><a href="#courses" class="nav-link">Courses</a></li>
-                <li><a href="#parents" class="nav-link">For Parents</a></li>
-                <li><a href="#privacy" class="nav-link">Privacy & Safety</a></li>
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home" class="nav-link active" onclick="showSection('home'); return false;">Home</a></li>
+                <li><a href="#about" class="nav-link" onclick="showSection('about'); return false;">About</a></li>
+                <li><a href="#phases" class="nav-link" onclick="showSection('phases'); return false;">Learning Phases</a></li>
+                <li><a href="#courses" class="nav-link" onclick="showSection('courses'); return false;">Courses</a></li>
+                <li><a href="#parents" class="nav-link" onclick="showSection('parents'); return false;">For Parents</a></li>
+                <li><a href="#privacy" class="nav-link" onclick="showSection('privacy'); return false;">Privacy & Safety</a></li>
+                <li><a href="#faq" class="nav-link" onclick="showSection('faq'); return false;">FAQ</a></li>
+                <li><a href="#contact" class="nav-link" onclick="showSection('contact'); return false;">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -725,8 +563,8 @@
             <p>A Comprehensive 3-Year Interactive Playbook for Young Minds Ages 8-14</p>
             <p style="font-size: 1rem; opacity: 0.9;">By Amish Shah | Educational Futurist</p>
             <div class="cta-buttons">
-                <a href="#phases" class="btn btn-primary"><i class="fas fa-rocket"></i> Start Your Journey</a>
-                <a href="#courses" class="btn btn-secondary"><i class="fas fa-graduation-cap"></i> Explore Courses</a>
+                <a href="#phases" class="btn btn-primary" onclick="showSection('phases'); return false;"><i class="fas fa-rocket"></i> Start Your Journey</a>
+                <a href="#courses" class="btn btn-secondary" onclick="showSection('courses'); return false;"><i class="fas fa-graduation-cap"></i> Explore Courses</a>
             </div>
         </div>
     </section>
@@ -776,7 +614,7 @@
                     <li>Privacy policies and data handling practices</li>
                     <li>Refund policies and terms of service</li>
                 </ul>
-                <p style="margin-top: 0.5rem;"><strong>The author is not affiliated with any course providers mentioned and receives no compensation from them.</strong> This content is provided under Creative Commons Attribution 4.0 International License. Course providers maintain their own terms of service and privacy policies.</p>
+                <p style="margin-top: 0.5rem;"><strong>The author is not affiliated with any course providers mentioned and receives no compensation from them.</strong></p>
             </div>
         </section>
 
@@ -788,7 +626,6 @@
                 <h3>Foreword by Amish Shah</h3>
                 <p>In a world where artificial intelligence is reshaping every facet of life—from how we learn to how we work—preparing our children isn't just an option; it's essential.</p>
                 <p style="margin-top: 1rem;">As an educational futurist, I've dedicated my career to bridging technology and human potential. This playbook draws from global best practices, including the World Economic Forum's insights on the future of jobs and pioneering curricula in forward-thinking nations like the UAE and India.</p>
-                <p style="margin-top: 1rem;"><strong>Why this playbook?</strong> Because AI evolves at breakneck speed, but the real power lies in humans who can guide it responsibly. This isn't a rigid textbook; it's your interactive guide to sparking curiosity today and building resilience for tomorrow.</p>
             </div>
 
             <h3 style="color: var(--royal-blue); margin: 2rem 0 1rem;">Core Principles</h3>
@@ -796,22 +633,22 @@
                 <div class="card">
                     <div class="card-icon">⚖️</div>
                     <h3>Ethics First</h3>
-                    <p>Every activity emphasizes fairness, bias detection, and responsible AI use. We ask "Is this fair?" before "Does this work?"</p>
+                    <p>Every activity emphasizes fairness, bias detection, and responsible AI use.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">🔄</div>
                     <h3>Adaptability Over Mastery</h3>
-                    <p>Tools change, but human ingenuity endures. We focus on learning how to learn, not memorizing specific technologies.</p>
+                    <p>Tools change, but human ingenuity endures.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">🎨</div>
                     <h3>Creativity & Critical Thinking</h3>
-                    <p>Build, break, rebuild. Experimentation and failure are celebrated as essential parts of innovation.</p>
+                    <p>Build, break, rebuild. Experimentation is celebrated.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">🌱</div>
                     <h3>Age-Appropriate Progression</h3>
-                    <p>Start offline with wonder, progress to hands-on tools, culminate in real-world impact projects.</p>
+                    <p>Start offline with wonder, progress to hands-on tools.</p>
                 </div>
             </div>
         </section>
@@ -819,415 +656,29 @@
         <!-- Learning Phases Section -->
         <section id="phases" class="page-section">
             <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; text-align: center; margin-bottom: 2rem;">3-Year Learning Journey</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Detailed course recommendations are available in the <a href="#courses" onclick="showSection('courses'); return false;" style="color: var(--royal-blue); font-weight: 600;">Courses section</a>.</p>
 
-            <!-- Phase 1 -->
-            <div class="phase-card">
-                <div class="phase-header">
-                    <div class="phase-number">1</div>
-                    <div class="phase-title">
-                        <h2>Sparking Curiosity 🌱</h2>
-                        <p class="phase-subtitle">Ages 8-10 | Year 1: December 2025 - November 2026</p>
-                    </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">🌱</div>
+                    <h3>Phase 1: Sparking Curiosity</h3>
+                    <p><strong>Ages 8-10 | Year 1</strong></p>
+                    <p style="margin-top: 1rem;">Unplugged activities, pattern recognition, basic ethics. Weekly time: 2 hours.</p>
+                    <p style="margin-top: 1rem;"><strong>Activities:</strong> Pattern detectives, ethics stories, real-world hunt, AI adventure journal.</p>
                 </div>
-                
-                <p><strong>Focus:</strong> Unplugged activities, pattern recognition, basic ethics</p>
-                <p><strong>Weekly Time:</strong> 2 hours</p>
-                
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>📝 Core Activities</h3>
-                            <span class="accordion-icon">▼</span>
-                        </div>
-                        <div class="accordion-content">
-                            <ul>
-                                <li><strong>Pattern Detectives:</strong> Sort toys/objects to understand how AI learns from data</li>
-                                <li><strong>Ethics Stories:</strong> Role-play scenarios about fair AI (e.g., "Should a robot pick teams?")</li>
-                                <li><strong>Real-World Hunt:</strong> Find patterns in weather, family routines, nature</li>
-                                <li><strong>AI Adventure Journal:</strong> Weekly reflections on discoveries and fairness questions</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>🎓 Recommended Free Courses</h3>
-                            <span class="accordion-icon">▼</span>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <div class="course-title">
-                                        <h4>Code.org - AI for Oceans</h4>
-                                        <div class="course-meta">
-                                            <span><i class="fas fa-clock"></i> 6-8 hours</span>
-                                            <span><i class="fas fa-users"></i> Ages 8-10</span>
-                                            <span><i class="fas fa-globe"></i> Global</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge badge-free">FREE</span>
-                                        <span class="badge badge-verified">✓ Verified</span>
-                                    </div>
-                                </div>
-                                <p class="course-description">Ocean-themed introduction to AI and machine learning. Students train AI to recognize fish species while learning about ocean conservation.</p>
-                                <ul class="course-features">
-                                    <li>Self-paced learning</li>
-                                    <li>No coding experience required</li>
-                                    <li>Used in 67,000+ schools worldwide</li>
-                                    <li>Available in 45+ languages</li>
-                                </ul>
-                                <div class="course-footer">
-                                    <div class="course-price">FREE</div>
-                                    <a href="https://code.org/oceans" target="_blank" rel="noopener" class="course-link">Start Learning →</a>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <div class="course-title">
-                                        <h4>Hour of AI by CSforALL</h4>
-                                        <div class="course-meta">
-                                            <span><i class="fas fa-clock"></i> 1 hour</span>
-                                            <span><i class="fas fa-users"></i> Ages 8+</span>
-                                            <span><i class="fas fa-globe"></i> Global</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge badge-free">FREE</span>
-                                        <span class="badge badge-verified">✓ Verified</span>
-                                    </div>
-                                </div>
-                                <p class="course-description">Quick introduction to AI concepts through interactive games and unplugged activities. Perfect for beginners.</p>
-                                <ul class="course-features">
-                                    <li>Unplugged options available</li>
-                                    <li>Ethics-focused activities</li>
-                                    <li>Backed by NSF and ISTE</li>
-                                </ul>
-                                <div class="course-footer">
-                                    <div class="course-price">FREE</div>
-                                    <a href="https://www.hourofai.org/" target="_blank" rel="noopener" class="course-link">Start Learning →</a>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <div class="course-title">
-                                        <h4>Google Education AI Resources (Curated)</h4>
-                                        <div class="course-meta">
-                                            <span><i class="fas fa-clock"></i> Self-paced</span>
-                                            <span><i class="fas fa-users"></i> Ages 8-11</span>
-                                            <span><i class="fas fa-globe"></i> Global</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge badge-free">FREE</span>
-                                        <span class="badge badge-verified">✓ Google</span>
-                                    </div>
-                                </div>
-                                <p class="course-description"><strong>Note:</strong> This is a curated collection of Google Education AI resources, not a single official "Google AI Explorers" program. Parents should explore available resources at edu.google.com and select age-appropriate materials.</p>
-                                <ul class="course-features">
-                                    <li>Parent-managed Google account recommended</li>
-                                    <li>Various interactive resources available</li>
-                                    <li>COPPA-compliant when using Family Link</li>
-                                </ul>
-                                <div class="course-footer">
-                                    <div class="course-price">FREE</div>
-                                    <a href="https://edu.google.com/" target="_blank" rel="noopener" class="course-link">Explore Resources →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>💎 Recommended Paid Courses (India)</h3>
-                            <span class="accordion-icon">▼</span>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="warning-box">
-                                <strong>⚠️ Pricing Verification Required:</strong> All prices listed are approximate based on December 2025 information. Parents must verify current pricing, availability, and licensing directly with each provider before enrollment.
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <div class="course-title">
-                                        <h4>Henry Harvin - AI for Kids</h4>
-                                        <div class="course-meta">
-                                            <span><i class="fas fa-clock"></i> 20 hours</span>
-                                            <span><i class="fas fa-users"></i> Ages 8-14</span>
-                                            <span><i class="fas fa-map-marker-alt"></i> India</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge badge-paid">PAID</span>
-                                        <span class="badge badge-verified">✓ ISO Certified</span>
-                                    </div>
-                                </div>
-                                <p class="course-description">Comprehensive AI fundamentals with live online classes. ISO 29990:2010 certified institution.</p>
-                                <ul class="course-features">
-                                    <li>Live instructor-led sessions</li>
-                                    <li>Certificate upon completion</li>
-                                    <li>Verify current pricing and EMI options</li>
-                                </ul>
-                                <div class="course-footer">
-                                    <div class="course-price">~₹20,000 (~$240) - Verify pricing</div>
-                                    <a href="https://www.henryharvin.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <div class="course-title">
-                                        <h4>JetLearn - Personalized AI Foundations</h4>
-                                        <div class="course-meta">
-                                            <span><i class="fas fa-clock"></i> Ongoing</span>
-                                            <span><i class="fas fa-users"></i> Ages 6-16</span>
-                                            <span><i class="fas fa-map-marker-alt"></i> India</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge badge-paid">PAID</span>
-                                        <span class="badge badge-verified">✓ Verified</span>
-                                    </div>
-                                </div>
-                                <p class="course-description">1:1 personalized tutoring starting with unplugged activities.</p>
-                                <ul class="course-features">
-                                    <li>One-on-one instruction</li>
-                                    <li>Free trial class available</li>
-                                    <li>Verify current monthly pricing</li>
-                                </ul>
-                                <div class="course-footer">
-                                    <div class="course-price">~₹3,200/month (~$40) - Verify pricing</div>
-                                    <a href="https://www.jetlearn.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>💎 Recommended Paid Courses (UAE)</h3>
-                            <span class="accordion-icon">▼</span>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="warning-box">
-                                <strong>⚠️ KHDA Verification Required:</strong> While these providers are known to operate in UAE, parents must independently verify current KHDA approval status, pricing, and availability before enrollment.
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <div class="course-title">
-                                        <h4>Brainy n Bright - STEM & AI Foundations</h4>
-                                        <div class="course-meta">
-                                            <span><i class="fas fa-clock"></i> Per module</span>
-                                            <span><i class="fas fa-users"></i> Ages 8-14</span>
-                                            <span><i class="fas fa-map-marker-alt"></i> UAE</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge badge-paid">PAID</span>
-                                        <span class="badge badge-verified">Verify KHDA Status</span>
-                                    </div>
-                                </div>
-                                <p class="course-description">In-person STEM and AI classes in Dubai and Abu Dhabi with robotics integration.</p>
-                                <ul class="course-features">
-                                    <li>Hands-on robotics kits</li>
-                                    <li>In-person instruction</li>
-                                    <li>Verify current KHDA registration and pricing</li>
-                                </ul>
-                                <div class="course-footer">
-                                    <div class="course-price">~AED 1,100/module (~$300) - Verify pricing</div>
-                                    <a href="https://brainynbright.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card">
+                    <div class="card-icon">🔨</div>
+                    <h3>Phase 2: Hands-On Exploration</h3>
+                    <p><strong>Ages 11-12 | Year 2</strong></p>
+                    <p style="margin-top: 1rem;">Visual coding, bias detection, interactive projects. Weekly time: 2.5 hours.</p>
+                    <p style="margin-top: 1rem;"><strong>Activities:</strong> Bias audits, ML playgrounds, creative AI projects.</p>
                 </div>
-            </div>
-
-            <!-- Phase 2 -->
-            <div class="phase-card">
-                <div class="phase-header">
-                    <div class="phase-number">2</div>
-                    <div class="phase-title">
-                        <h2>Hands-On Exploration 🔨</h2>
-                        <p class="phase-subtitle">Ages 11-12 | Year 2: December 2026 - November 2027</p>
-                    </div>
-                </div>
-                
-                <p><strong>Focus:</strong> Visual coding, bias detection, interactive projects</p>
-                <p><strong>Weekly Time:</strong> 2.5 hours</p>
-                
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>🎓 Recommended Free Courses</h3>
-                            <span class="accordion-icon">▼</span>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <div class="course-title">
-                                        <h4>MIT Day of AI</h4>
-                                        <div class="course-meta">
-                                            <span><i class="fas fa-clock"></i> 10-15 hours</span>
-                                            <span><i class="fas fa-users"></i> Ages 10-14</span>
-                                            <span><i class="fas fa-globe"></i> Global</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge badge-free">FREE</span>
-                                        <span class="badge badge-verified">✓ MIT</span>
-                                    </div>
-                                </div>
-                                <p class="course-description">Comprehensive AI curriculum from MIT Media Lab covering bias, ethics, and hands-on machine learning projects.</p>
-                                <ul class="course-features">
-                                    <li>Real-world case studies</li>
-                                    <li>Bias detection projects</li>
-                                    <li>Teacher guides for home use</li>
-                                </ul>
-                                <div class="course-footer">
-                                    <div class="course-price">FREE</div>
-                                    <a href="https://dayofai.org/" target="_blank" rel="noopener" class="course-link">Start Learning →</a>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <div class="course-title">
-                                        <h4>AI4K12 - Five Big Ideas</h4>
-                                        <div class="course-meta">
-                                            <span><i class="fas fa-clock"></i> Self-paced</span>
-                                            <span><i class="fas fa-users"></i> Ages 10+</span>
-                                            <span><i class="fas fa-globe"></i> Global</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge badge-free">FREE</span>
-                                        <span class="badge badge-verified">✓ AAAI & CSTA</span>
-                                    </div>
-                                </div>
-                                <p class="course-description">Framework covering perception, representation, learning, interaction, and societal impact of AI.</p>
-                                <ul class="course-features">
-                                    <li>AAAI & CSTA partnership</li>
-                                    <li>Comprehensive AI concepts</li>
-                                    <li>Educator-created content</li>
-                                </ul>
-                                <div class="course-footer">
-                                    <div class="course-price">FREE</div>
-                                    <a href="https://ai4k12.org/" target="_blank" rel="noopener" class="course-link">Start Learning →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Phase 3 -->
-            <div class="phase-card">
-                <div class="phase-header">
-                    <div class="phase-number">3</div>
-                    <div class="phase-title">
-                        <h2>Adaptive Innovation 🚀</h2>
-                        <p class="phase-subtitle">Ages 13-14 | Year 3: December 2027 - November 2028</p>
-                    </div>
-                </div>
-                
-                <p><strong>Focus:</strong> Real-world solutions, capstone projects, community impact</p>
-                <p><strong>Weekly Time:</strong> 3 hours</p>
-                
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <h3>🎓 Recommended Courses</h3>
-                            <span class="accordion-icon">▼</span>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <div class="course-title">
-                                        <h4>Inspirit AI - Scholars Program</h4>
-                                        <div class="course-meta">
-                                            <span><i class="fas fa-clock"></i> 25+ hours</span>
-                                            <span><i class="fas fa-users"></i> Ages 13-18</span>
-                                            <span><i class="fas fa-globe"></i> Global</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge badge-paid">PAID</span>
-                                        <span class="badge badge-verified">✓ Stanford/MIT Instructors</span>
-                                    </div>
-                                </div>
-                                <p class="course-description">Advanced ML ethics and real projects taught by Stanford and MIT instructors. <strong>Note:</strong> This is a paid program. Scholarships may be available.</p>
-                                <ul class="course-features">
-                                    <li>Stanford/MIT instructors (not official university program)</li>
-                                    <li>Capstone project support</li>
-                                    <li>Verify current pricing and scholarship availability</li>
-                                </ul>
-                                <div class="course-footer">
-                                    <div class="course-price">~$900-$1,850+ - Verify pricing & scholarships</div>
-                                    <a href="https://www.inspiritai.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <div class="course-title">
-                                        <h4>Google AI Essentials (Coursera)</h4>
-                                        <div class="course-meta">
-                                            <span><i class="fas fa-clock"></i> 5 hours</span>
-                                            <span><i class="fas fa-users"></i> Ages 14+</span>
-                                            <span><i class="fas fa-globe"></i> Global</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge badge-paid">PAID</span>
-                                        <span class="badge badge-subsidized">May be subsidized</span>
-                                        <span class="badge badge-verified">✓ Google</span>
-                                    </div>
-                                </div>
-                                <p class="course-description">Generative AI fundamentals with real workplace scenarios. <strong>Note:</strong> Typically requires Coursera subscription. May be free via some institutions or pilot programs.</p>
-                                <ul class="course-features">
-                                    <li>Generative AI focus</li>
-                                    <li>Certificate upon completion</li>
-                                    <li>Check if your school/employer provides free access</li>
-                                    <li>Verify current Coursera pricing</li>
-                                </ul>
-                                <div class="course-footer">
-                                    <div class="course-price">Coursera subscription required - Check pricing</div>
-                                    <a href="https://www.coursera.org/learn/google-ai-essentials" target="_blank" rel="noopener" class="course-link">Learn More →</a>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <div class="course-title">
-                                        <h4>Elements of AI</h4>
-                                        <div class="course-meta">
-                                            <span><i class="fas fa-clock"></i> 30 hours</span>
-                                            <span><i class="fas fa-users"></i> Ages 13+</span>
-                                            <span><i class="fas fa-globe"></i> Global</span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge badge-free">FREE</span>
-                                        <span class="badge badge-verified">✓ University of Helsinki</span>
-                                    </div>
-                                </div>
-                                <p class="course-description">Comprehensive AI fundamentals from University of Helsinki. 1+ million students worldwide.</p>
-                                <ul class="course-features">
-                                    <li>No coding required</li>
-                                    <li>EU-backed initiative</li>
-                                    <li>Excellent theory foundation</li>
-                                </ul>
-                                <div class="course-footer">
-                                    <div class="course-price">FREE</div>
-                                    <a href="https://www.elementsofai.com/" target="_blank" rel="noopener" class="course-link">Start Learning →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h3>Phase 3: Adaptive Innovation</h3>
+                    <p><strong>Ages 13-14 | Year 3</strong></p>
+                    <p style="margin-top: 1rem;">Real-world solutions, capstone projects, community impact. Weekly time: 3 hours.</p>
+                    <p style="margin-top: 1rem;"><strong>Activities:</strong> Capstone projects, community solutions, portfolio building.</p>
                 </div>
             </div>
         </section>
@@ -1243,8 +694,6 @@
                     <li><strong>Parents MUST independently verify:</strong> Current pricing, availability, licensing status, accreditation, age-appropriateness, privacy policies, and refund terms</li>
                     <li><strong>Regulatory compliance:</strong> Not all providers have formal KHDA (UAE) or NCERT (India) alignment. Verify directly with each provider</li>
                     <li><strong>Pricing changes:</strong> All prices are approximate and subject to change without notice</li>
-                    <li><strong>Free vs. Paid:</strong> Some courses listed as "free" may have paid tiers or require subscriptions. Always check current terms</li>
-                    <li><strong>Scholarships:</strong> Some paid programs offer scholarships or financial aid - inquire directly</li>
                 </ul>
                 <p style="margin-top: 0.5rem;"><strong>We are not affiliated with any course providers and receive no compensation from them.</strong></p>
             </div>
@@ -1257,12 +706,10 @@
                     <li>✓ Take advantage of free trial classes when available</li>
                     <li>✓ Verify instructor credentials and teaching methodology</li>
                     <li>✓ Check refund policies before paying</li>
-                    <li>✓ Ensure the course matches your child's current skill level</li>
-                    <li>✓ Ask about data privacy and child safety policies</li>
                 </ul>
             </div>
 
-            <h3 style="color: var(--royal-blue); margin: 2rem 0 1rem; text-align: center;">Filter Courses by Type & Region</h3>
+            <h3 style="color: var(--royal-blue); margin: 2rem 0 1rem; text-align: center;">Filter Courses</h3>
             <div class="filter-buttons">
                 <button class="filter-btn active" onclick="filterCourses('all')">All Courses</button>
                 <button class="filter-btn" onclick="filterCourses('free')">Free Only</button>
@@ -1290,12 +737,12 @@
                             <span class="badge badge-verified">✓ Verified</span>
                         </div>
                     </div>
-                    <p class="course-description">Ocean-themed introduction to AI and machine learning. Students train AI to recognize fish species while learning about ocean conservation. Available in 45+ languages.</p>
+                    <p class="course-description">Ocean-themed introduction to AI and machine learning. Students train AI to recognize fish species while learning about ocean conservation.</p>
                     <ul class="course-features">
                         <li>Self-paced learning</li>
                         <li>No coding experience required</li>
                         <li>Used in 67,000+ schools worldwide</li>
-                        <li>Certificate of completion</li>
+                        <li>Available in 45+ languages</li>
                     </ul>
                     <div class="course-footer">
                         <div class="course-price">FREE</div>
@@ -1318,12 +765,11 @@
                             <span class="badge badge-verified">✓ Verified</span>
                         </div>
                     </div>
-                    <p class="course-description">Quick introduction to AI concepts through interactive games and unplugged activities. Perfect for beginners.</p>
+                    <p class="course-description">Quick introduction to AI concepts through interactive games and unplugged activities.</p>
                     <ul class="course-features">
                         <li>Unplugged options available</li>
                         <li>Ethics-focused activities</li>
                         <li>Backed by NSF and ISTE</li>
-                        <li>Teacher guides included</li>
                     </ul>
                     <div class="course-footer">
                         <div class="course-price">FREE</div>
@@ -1346,12 +792,11 @@
                             <span class="badge badge-verified">✓ MIT</span>
                         </div>
                     </div>
-                    <p class="course-description">Comprehensive AI curriculum from MIT Media Lab covering bias, ethics, and hands-on machine learning projects with real-world case studies.</p>
+                    <p class="course-description">Comprehensive AI curriculum from MIT Media Lab covering bias, ethics, and hands-on machine learning projects.</p>
                     <ul class="course-features">
                         <li>Real-world case studies</li>
                         <li>Bias detection projects</li>
                         <li>Teacher guides for home use</li>
-                        <li>Modular learning paths</li>
                     </ul>
                     <div class="course-footer">
                         <div class="course-price">FREE</div>
@@ -1378,7 +823,6 @@
                     <ul class="course-features">
                         <li>AAAI & CSTA partnership</li>
                         <li>Comprehensive AI concepts</li>
-                        <li>Excellent supplementary resource</li>
                         <li>Educator-created content</li>
                     </ul>
                     <div class="course-footer">
@@ -1392,7 +836,7 @@
                         <div class="course-title">
                             <h4>Elements of AI</h4>
                             <div class="course-meta">
-                                <span><i class="fas fa-clock"></i> 30 hours (6 weeks)</span>
+                                <span><i class="fas fa-clock"></i> 30 hours</span>
                                 <span><i class="fas fa-users"></i> Ages 13+</span>
                                 <span><i class="fas fa-globe"></i> Global</span>
                             </div>
@@ -1406,9 +850,7 @@
                     <ul class="course-features">
                         <li>No coding required</li>
                         <li>EU-backed initiative</li>
-                        <li>1+ million students</li>
                         <li>Excellent theory foundation</li>
-                        <li>Certificate available</li>
                     </ul>
                     <div class="course-footer">
                         <div class="course-price">FREE</div>
@@ -1431,12 +873,11 @@
                             <span class="badge badge-verified">✓ Google</span>
                         </div>
                     </div>
-                    <p class="course-description"><strong>Note:</strong> This is a curated collection of Google Education AI resources, not a single official program. Parents should explore available resources at edu.google.com and select age-appropriate materials.</p>
+                    <p class="course-description"><strong>Note:</strong> This is a curated collection of Google Education AI resources, not a single official program.</p>
                     <ul class="course-features">
                         <li>Parent-managed Google account recommended</li>
                         <li>Various interactive resources available</li>
                         <li>COPPA-compliant when using Family Link</li>
-                        <li>Privacy-focused design</li>
                     </ul>
                     <div class="course-footer">
                         <div class="course-price">FREE</div>
@@ -1461,15 +902,14 @@
                             <span class="badge badge-verified">✓ Stanford/MIT Instructors</span>
                         </div>
                     </div>
-                    <p class="course-description">Advanced ML ethics and real projects taught by Stanford and MIT instructors. <strong>Note:</strong> This is a paid program (not an official Stanford/MIT program). Scholarships may be available. 10,000+ alumni network.</p>
+                    <p class="course-description">Advanced ML ethics and real projects. <strong>Note:</strong> This is a paid program. Scholarships may be available.</p>
                     <ul class="course-features">
                         <li>Stanford/MIT instructors (not official university program)</li>
                         <li>Capstone project support</li>
-                        <li>College-prep elements</li>
                         <li>Verify current pricing and scholarship availability</li>
                     </ul>
                     <div class="course-footer">
-                        <div class="course-price">~$900-$1,850+ - Verify pricing & scholarships</div>
+                        <div class="course-price">~$900-$1,850+ - Verify pricing</div>
                         <a href="https://www.inspiritai.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
                     </div>
                 </div>
@@ -1487,20 +927,16 @@
                         <div>
                             <span class="badge badge-paid">PAID</span>
                             <span class="badge badge-subsidized">May be subsidized</span>
-                            <span class="badge badge-verified">✓ Google</span>
                         </div>
                     </div>
-                    <p class="course-description">Generative AI fundamentals with real workplace scenarios. Part of Google Career Certificates. <strong>Note:</strong> Typically requires Coursera subscription (~$49/month). May be free via some schools/employers or pilot programs.</p>
+                    <p class="course-description">Generative AI fundamentals. <strong>Note:</strong> Typically requires Coursera subscription. May be free via some institutions.</p>
                     <ul class="course-features">
                         <li>Generative AI focus</li>
-                        <li>Prompting techniques</li>
-                        <li>Ethics and responsibility</li>
-                        <li>Certificate upon completion</li>
                         <li>Check if your school/employer provides free access</li>
                         <li>Verify current Coursera pricing</li>
                     </ul>
                     <div class="course-footer">
-                        <div class="course-price">Coursera subscription required (~$49/mo) - Check pricing</div>
+                        <div class="course-price">Coursera subscription (~$49/mo)</div>
                         <a href="https://www.coursera.org/learn/google-ai-essentials" target="_blank" rel="noopener" class="course-link">Learn More →</a>
                     </div>
                 </div>
@@ -1522,15 +958,14 @@
                             <span class="badge badge-verified">✓ ISO Certified</span>
                         </div>
                     </div>
-                    <p class="course-description">Comprehensive AI fundamentals with live online classes. ISO 29990:2010 certified institution with 500+ verified reviews.</p>
+                    <p class="course-description">Comprehensive AI fundamentals with live online classes. ISO 29990:2010 certified.</p>
                     <ul class="course-features">
                         <li>Live instructor-led sessions</li>
                         <li>Certificate upon completion</li>
-                        <li>Lifetime access to materials</li>
-                        <li>EMI options available - verify current terms</li>
+                        <li>Verify current pricing and EMI options</li>
                     </ul>
                     <div class="course-footer">
-                        <div class="course-price">~₹20,000 (~$240) - Verify pricing</div>
+                        <div class="course-price">~₹20,000 (~$240)</div>
                         <a href="https://www.henryharvin.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
                     </div>
                 </div>
@@ -1538,7 +973,7 @@
                 <div class="course-card" data-type="paid" data-region="india">
                     <div class="course-header">
                         <div class="course-title">
-                            <h4>JetLearn - Personalized AI Foundations</h4>
+                            <h4>JetLearn - Personalized AI</h4>
                             <div class="course-meta">
                                 <span><i class="fas fa-clock"></i> Ongoing</span>
                                 <span><i class="fas fa-users"></i> Ages 6-16</span>
@@ -1547,77 +982,16 @@
                         </div>
                         <div>
                             <span class="badge badge-paid">PAID</span>
-                            <span class="badge badge-verified">✓ Verified</span>
                         </div>
                     </div>
-                    <p class="course-description">1:1 personalized tutoring starting with unplugged activities. Featured in YourStory. 10,000+ students taught.</p>
+                    <p class="course-description">1:1 personalized tutoring starting with unplugged activities.</p>
                     <ul class="course-features">
                         <li>One-on-one instruction</li>
-                        <li>Customized learning path</li>
-                        <li>Flexible scheduling</li>
                         <li>Free trial class available</li>
                     </ul>
                     <div class="course-footer">
-                        <div class="course-price">~₹3,200/month (~$40) - Verify pricing</div>
+                        <div class="course-price">~₹3,200/month (~$40)</div>
                         <a href="https://www.jetlearn.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
-                    </div>
-                </div>
-
-                <div class="course-card" data-type="paid" data-region="india">
-                    <div class="course-header">
-                        <div class="course-title">
-                            <h4>Codingal - AI Prodigy Course</h4>
-                            <div class="course-meta">
-                                <span><i class="fas fa-clock"></i> 96 lessons (2 years)</span>
-                                <span><i class="fas fa-users"></i> Ages 9-14</span>
-                                <span><i class="fas fa-map-marker-alt"></i> India</span>
-                            </div>
-                        </div>
-                        <div>
-                            <span class="badge badge-paid">PAID</span>
-                            <span class="badge badge-verified">✓ YC-Backed</span>
-                        </div>
-                    </div>
-                    <p class="course-description">Comprehensive AI and ML curriculum with 1:1 live instruction. 500,000+ students worldwide. Y Combinator backed.</p>
-                    <ul class="course-features">
-                        <li>96 structured lessons over 2 years</li>
-                        <li>ML hands-on projects</li>
-                        <li>Python introduction</li>
-                        <li>Certificates at each level</li>
-                        <li>Free trial class available</li>
-                    </ul>
-                    <div class="course-footer">
-                        <div class="course-price">~₹6,500-12,000/month (~$80-150) - Verify pricing</div>
-                        <a href="https://www.codingal.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
-                    </div>
-                </div>
-
-                <div class="course-card" data-type="paid" data-region="india">
-                    <div class="course-header">
-                        <div class="course-title">
-                            <h4>WhiteHat Jr - AI Foundations</h4>
-                            <div class="course-meta">
-                                <span><i class="fas fa-clock"></i> 1 year</span>
-                                <span><i class="fas fa-users"></i> Ages 10-14</span>
-                                <span><i class="fas fa-map-marker-alt"></i> India</span>
-                            </div>
-                        </div>
-                        <div>
-                            <span class="badge badge-paid">PAID</span>
-                            <span class="badge badge-verified">✓ BYJU'S</span>
-                        </div>
-                    </div>
-                    <p class="course-description">1:1 live classes with curriculum designed by IIT and Stanford educators. Part of BYJU'S ecosystem.</p>
-                    <ul class="course-features">
-                        <li>One-on-one live instruction</li>
-                        <li>App building projects</li>
-                        <li>Project portfolio creation</li>
-                        <li>IIT/Stanford curriculum</li>
-                        <li>Flexible scheduling</li>
-                    </ul>
-                    <div class="course-footer">
-                        <div class="course-price">~₹25,000/year (~$300) - Verify pricing</div>
-                        <a href="https://www.whitehatjr.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
                     </div>
                 </div>
 
@@ -1626,249 +1000,105 @@
                 <div class="course-card" data-type="paid" data-region="uae">
                     <div class="course-header">
                         <div class="course-title">
-                            <h4>Brainy n Bright - STEM & AI Foundations</h4>
+                            <h4>Brainy n Bright - STEM & AI</h4>
                             <div class="course-meta">
                                 <span><i class="fas fa-clock"></i> Per module</span>
                                 <span><i class="fas fa-users"></i> Ages 8-14</span>
-                                <span><i class="fas fa-map-marker-alt"></i> UAE (Dubai/Abu Dhabi)</span>
+                                <span><i class="fas fa-map-marker-alt"></i> UAE</span>
                             </div>
                         </div>
                         <div>
                             <span class="badge badge-paid">PAID</span>
-                            <span class="badge badge-verified">Verify KHDA Status</span>
                         </div>
                     </div>
-                    <p class="course-description">In-person STEM and AI classes in Dubai and Abu Dhabi with robotics integration and hands-on kits.</p>
+                    <p class="course-description">In-person STEM and AI classes in Dubai and Abu Dhabi with robotics integration.</p>
                     <ul class="course-features">
-                        <li>Hands-on robotics kits included</li>
-                        <li>In-person instruction</li>
-                        <li>Small class sizes</li>
-                        <li>Multiple UAE locations</li>
-                        <li>Verify current KHDA registration and pricing</li>
+                        <li>Hands-on robotics kits</li>
+                        <li>Verify current KHDA registration</li>
                     </ul>
                     <div class="course-footer">
-                        <div class="course-price">~AED 1,100/module (~$300) - Verify pricing</div>
+                        <div class="course-price">~AED 1,100/module (~$300)</div>
                         <a href="https://brainynbright.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
-                    </div>
-                </div>
-
-                <div class="course-card" data-type="paid" data-region="uae">
-                    <div class="course-header">
-                        <div class="course-title">
-                            <h4>Edoxi Training Institute - AI for Kids</h4>
-                            <div class="course-meta">
-                                <span><i class="fas fa-clock"></i> Varies</span>
-                                <span><i class="fas fa-users"></i> Grades 8-10</span>
-                                <span><i class="fas fa-map-marker-alt"></i> UAE (Dubai/Sharjah)</span>
-                            </div>
-                        </div>
-                        <div>
-                            <span class="badge badge-paid">PAID</span>
-                            <span class="badge badge-verified">Verify KHDA Status</span>
-                        </div>
-                    </div>
-                    <p class="course-description">AI training with Python, ML projects, and industry partnerships. Available in Dubai and Sharjah.</p>
-                    <ul class="course-features">
-                        <li>Python programming</li>
-                        <li>ML project work</li>
-                        <li>Industry partnerships</li>
-                        <li>Dubai and Sharjah locations</li>
-                        <li>Verify current KHDA approval and pricing</li>
-                    </ul>
-                    <div class="course-footer">
-                        <div class="course-price">~AED 1,300-1,700 (~$350-460) - Verify pricing</div>
-                        <a href="https://edoxi.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
-                    </div>
-                </div>
-
-                <div class="course-card" data-type="paid" data-region="uae">
-                    <div class="course-header">
-                        <div class="course-title">
-                            <h4>The Coding School - AI Basics</h4>
-                            <div class="course-meta">
-                                <span><i class="fas fa-clock"></i> Varies</span>
-                                <span><i class="fas fa-users"></i> Ages 8-14</span>
-                                <span><i class="fas fa-map-marker-alt"></i> UAE (Dubai)</span>
-                            </div>
-                        </div>
-                        <div>
-                            <span class="badge badge-paid">PAID</span>
-                            <span class="badge badge-verified">Verify KHDA Status</span>
-                        </div>
-                    </div>
-                    <p class="course-description">In-person and hybrid AI classes using PictoBlox with robotics integration.</p>
-                    <ul class="course-features">
-                        <li>PictoBlox certified</li>
-                        <li>Hardware kits included</li>
-                        <li>Robotics integration</li>
-                        <li>Dubai locations</li>
-                        <li>Verify current KHDA approval and pricing</li>
-                    </ul>
-                    <div class="course-footer">
-                        <div class="course-price">~AED 800-1,200 (~$220-330) - Verify pricing</div>
-                        <a href="https://thecodingschool.ae/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Privacy & Safety Section -->
+        <!-- Privacy Section -->
         <section id="privacy" class="page-section">
             <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem;">🔒 Privacy & Child Safety</h2>
 
             <div class="card">
                 <h3>Our Privacy Commitment</h3>
-                <p><strong>What data we collect:</strong></p>
-                <ul>
-                    <li>Email addresses (if you subscribe to updates)</li>
-                    <li>Region preference (UAE/India/Global)</li>
-                    <li>Progress tracking data (stored locally in your browser only)</li>
-                </ul>
-                <p style="margin-top: 1rem;"><strong>How we use it:</strong></p>
-                <ul>
-                    <li>Sending quarterly playbook updates and new resource notifications</li>
-                    <li>No data is sold or shared with third parties (except our email service provider)</li>
-                    <li>No tracking cookies or analytics on this site</li>
-                </ul>
-                <p style="margin-top: 1rem;"><strong>Your rights:</strong></p>
-                <ul>
-                    <li>Unsubscribe anytime via email link</li>
-                    <li>Request data deletion by emailing amish83@gmail.com</li>
-                    <li>All progress tracking is stored locally - clear browser data to remove</li>
-                </ul>
+                <p><strong>What data we collect:</strong> Email addresses (if you subscribe), region preference, progress tracking (stored locally in your browser only).</p>
+                <p style="margin-top: 1rem;"><strong>How we use it:</strong> Sending quarterly updates only. No data sold or shared with third parties.</p>
+                <p style="margin-top: 1rem;"><strong>Your rights:</strong> Unsubscribe anytime, request data deletion at amish83@gmail.com</p>
             </div>
 
             <div class="interactive-box">
-                <h3>🛡️ Child Safety Guidelines for AI Tools</h3>
-                <p><strong>Essential rules when children use AI tools:</strong></p>
+                <h3>🛡️ Child Safety Guidelines</h3>
                 <ul style="margin-top: 1rem; list-style: none;">
-                    <li>✓ <strong>Under-13s:</strong> Use only under parent supervision with parent-managed accounts</li>
-                    <li>✓ <strong>Respect age limits:</strong> Always follow each provider's minimum age requirements</li>
-                    <li>✓ <strong>No personal information:</strong> Never upload photos, addresses, phone numbers, or school names</li>
-                    <li>✓ <strong>Disable data training:</strong> Opt out of data collection where possible</li>
-                    <li>✓ <strong>Review activity regularly:</strong> Check what your child is creating and sharing</li>
-                    <li>✓ <strong>Use school/family accounts:</strong> Avoid personal accounts for young children</li>
-                    <li>✓ <strong>Teach digital citizenship:</strong> Discuss privacy, consent, and responsible use</li>
+                    <li>✓ <strong>Under-13s:</strong> Use only under parent supervision</li>
+                    <li>✓ <strong>Respect age limits:</strong> Follow each provider's requirements</li>
+                    <li>✓ <strong>No personal information:</strong> Never upload photos, addresses, phone numbers</li>
+                    <li>✓ <strong>Review activity regularly:</strong> Check what your child is creating</li>
                 </ul>
-            </div>
-
-            <div class="card-grid">
-                <div class="card">
-                    <h3>COPPA Compliance (USA)</h3>
-                    <p>For children under 13 in the USA, ensure any online service is COPPA-compliant and uses verifiable parental consent.</p>
-                </div>
-                <div class="card">
-                    <h3>GDPR/GDPR-K (EU/UK)</h3>
-                    <p>For children in EU/UK, services must comply with GDPR and obtain parental consent for children under 16 (or lower age in some countries).</p>
-                </div>
-                <div class="card">
-                    <h3>UAE Regulations</h3>
-                    <p>Follow UAE's Child Rights Law and ensure services comply with local data protection requirements.</p>
-                </div>
-                <div class="card">
-                    <h3>India IT Rules</h3>
-                    <p>Comply with India's IT Rules 2021 regarding children's data and parental consent requirements.</p>
-                </div>
-            </div>
-
-            <div class="warning-box">
-                <strong>⚠️ Third-Party Course Providers:</strong> When you enroll in courses from providers listed in this playbook, you are subject to their privacy policies and terms of service, not ours. Always review each provider's privacy policy, especially regarding children's data, before enrollment.
             </div>
         </section>
 
-        <!-- For Parents Section -->
+        <!-- Parents Section -->
         <section id="parents" class="page-section">
             <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem;">🧭 The Parent's Compass</h2>
 
             <div class="interactive-box">
                 <h3>You Don't Need to Be a Tech Expert</h3>
-                <p>Just bring curiosity and consistency. This section provides everything you need to guide your child's AI learning journey, regardless of your technical background.</p>
+                <p>Just bring curiosity and consistency. This section provides everything you need to guide your child's AI learning journey.</p>
             </div>
 
             <h3 style="color: var(--royal-blue); margin: 2rem 0 1rem;">Conversation Starters by Age</h3>
             <div class="card-grid">
                 <div class="card">
-                    <h3>Ages 8-10 (Phase 1)</h3>
+                    <h3>Ages 8-10</h3>
                     <p><strong>"I noticed..."</strong> How does Alexa understand you?</p>
                     <p><strong>"What if..."</strong> What if a robot was your teacher?</p>
                 </div>
                 <div class="card">
-                    <h3>Ages 11-12 (Phase 2)</h3>
+                    <h3>Ages 11-12</h3>
                     <p><strong>"How does..."</strong> How does Spotify know what music you'll like?</p>
-                    <p><strong>"Should we..."</strong> Should AI grade homework?</p>
                 </div>
                 <div class="card">
-                    <h3>Ages 13-14 (Phase 3)</h3>
+                    <h3>Ages 13-14</h3>
                     <p><strong>"What's your take..."</strong> Is AI-generated art real art?</p>
-                    <p><strong>"If you designed..."</strong> How would you design an AI tutor?</p>
                 </div>
             </div>
         </section>
 
         <!-- FAQ Section -->
         <section id="faq" class="page-section">
-            <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem;">❓ Frequently Asked Questions</h2>
+            <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem;">❓ FAQ</h2>
 
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>How do I verify if a course is legitimate and properly licensed?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p><strong>For UAE courses:</strong> Check KHDA's official website (khda.gov.ae) for registered training centers. Look for KHDA approval certificates on the provider's website.</p>
-                    <p style="margin-top: 0.5rem;"><strong>For India courses:</strong> While NCERT doesn't certify private courses, look for ISO certification, reviews from verified parents, and check if the provider is registered as an educational institution.</p>
-                    <p style="margin-top: 0.5rem;"><strong>For all courses:</strong> Read recent reviews (within 6 months), verify instructor credentials, check refund policies, and start with a free trial if available.</p>
-                </div>
+            <div class="card">
+                <h3>How do I verify if a course is legitimate?</h3>
+                <p><strong>For UAE:</strong> Check KHDA's official website (khda.gov.ae)</p>
+                <p><strong>For India:</strong> Look for ISO certification, verified reviews</p>
+                <p><strong>For all:</strong> Read recent reviews, verify credentials, check refund policies</p>
             </div>
 
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Are the "free" courses really free, or are there hidden costs?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Courses labeled "FREE" in this playbook are free to access as of December 2025, but always verify current terms:</p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li><strong>Code.org, MIT Day of AI, Hour of AI, AI4K12, Elements of AI:</strong> Completely free with no hidden costs</li>
-                        <li><strong>Google AI Essentials:</strong> Typically requires Coursera subscription (~$49/month), but may be free via some schools/employers</li>
-                        <li><strong>Some providers:</strong> May offer free basic tiers with paid upgrades for certificates or advanced features</li>
-                    </ul>
-                    <p style="margin-top: 0.5rem;">Always read the fine print before enrolling.</p>
-                </div>
+            <div class="card">
+                <h3>Are the "free" courses really free?</h3>
+                <p>Code.org, MIT Day of AI, Hour of AI, AI4K12, Elements of AI are completely free.</p>
+                <p style="margin-top: 0.5rem;">Google AI Essentials typically requires Coursera subscription (~$49/month) but may be free via some schools/employers.</p>
             </div>
 
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>How much should I expect to spend on my child's AI education?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p><strong>You can complete the entire 3-year journey for FREE</strong> using Code.org, MIT Day of AI, AI4K12, and Elements of AI.</p>
-                    <p style="margin-top: 0.5rem;"><strong>If you choose paid options:</strong></p>
-                    <ul>
-                        <li><strong>Budget:</strong> $40-80/month (JetLearn, Codingal basic tier)</li>
-                        <li><strong>Mid-range:</strong> $200-400 for structured programs (Henry Harvin, UAE centers)</li>
-                        <li><strong>Premium:</strong> $900-1,850+ for intensive programs (Inspirit AI)</li>
-                    </ul>
-                    <p style="margin-top: 0.5rem;">Start free, then invest in paid courses only if your child shows sustained interest.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>What if pricing or availability changes after I read this playbook?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Course pricing, availability, and features change frequently. This playbook is accurate as of December 2025, but:</p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li>Always verify current pricing directly with the provider</li>
-                        <li>Check for seasonal discounts or promotions</li>
-                        <li>Ask about scholarships or financial aid</li>
-                        <li>Subscribe to our quarterly updates for the latest information</li>
-                    </ul>
-                    <p style="margin-top: 0.5rem;">We update this playbook every 3 months, but cannot guarantee real-time accuracy.</p>
-                </div>
+            <div class="card">
+                <h3>How much should I expect to spend?</h3>
+                <p><strong>You can complete the entire 3-year journey for FREE</strong> using the free courses listed.</p>
+                <p style="margin-top: 0.5rem;"><strong>If you choose paid options:</strong></p>
+                <ul>
+                    <li>Budget: $40-80/month</li>
+                    <li>Mid-range: $200-400 for structured programs</li>
+                    <li>Premium: $900-1,850+ for intensive programs</li>
+                </ul>
             </div>
         </section>
 
@@ -1879,18 +1109,18 @@
             <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
                 <div class="card-icon">✉️</div>
                 <h3>Questions? Feedback? Corrections?</h3>
-                <p>I'd love to hear from you! Whether you have questions, found an error, or want to share your child's AI learning journey.</p>
+                <p>I'd love to hear from you!</p>
                 <p style="margin: 2rem 0;">
                     <strong>Email:</strong> 
                     <a href="mailto:amish83@gmail.com" style="color: var(--royal-blue); font-size: 1.2rem;">amish83@gmail.com</a>
                 </p>
-                <p style="font-size: 0.9rem; color: var(--text-gray);">I typically respond within 48 hours. For urgent inquiries, please mention "AI Playbook" in your subject line.</p>
+                <p style="font-size: 0.9rem; color: var(--text-gray);">I typically respond within 48 hours.</p>
             </div>
 
             <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, var(--light-gray), var(--white)); border-radius: 15px;">
                 <h3 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif;">Final Message</h3>
                 <p style="font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin: 1rem auto;">
-                    "This playbook is your starting line, not your finish line. The AI landscape will change—tools will evolve, new challenges will emerge. But the skills you're building—ethical reasoning, adaptability, creative problem-solving—those are timeless. You're not preparing for a future with AI. You're creating it."
+                    "This playbook is your starting line, not your finish line. The AI landscape will change—tools will evolve, new challenges will emerge. But the skills you're building—ethical reasoning, adaptability, creative problem-solving—those are timeless."
                 </p>
                 <p style="margin-top: 2rem; font-weight: 600; color: var(--royal-blue);">
                     — Amish Shah<br>
@@ -1904,128 +1134,90 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Quick Links</h3>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#phases">Learning Phases</a>
-                <a href="#courses">Courses</a>
+                <a href="#home" onclick="showSection('home'); return false;">Home</a>
+                <a href="#about" onclick="showSection('about'); return false;">About</a>
+                <a href="#phases" onclick="showSection('phases'); return false;">Learning Phases</a>
+                <a href="#courses" onclick="showSection('courses'); return false;">Courses</a>
             </div>
             <div class="footer-section">
                 <h3>Resources</h3>
-                <a href="#parents">For Parents</a>
-                <a href="#privacy">Privacy & Safety</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h3>Verified Sources</h3>
-                <a href="https://weforum.org" target="_blank" rel="noopener">World Economic Forum</a>
-                <a href="https://unesco.org" target="_blank" rel="noopener">UNESCO</a>
-                <a href="https://moe.gov.ae" target="_blank" rel="noopener">UAE Ministry of Education</a>
-                <a href="https://ncert.nic.in" target="_blank" rel="noopener">India NCERT</a>
+                <a href="#parents" onclick="showSection('parents'); return false;">For Parents</a>
+                <a href="#privacy" onclick="showSection('privacy'); return false;">Privacy & Safety</a>
+                <a href="#faq" onclick="showSection('faq'); return false;">FAQ</a>
+                <a href="#contact" onclick="showSection('contact'); return false;">Contact</a>
             </div>
             <div class="footer-section">
                 <h3>Contact & Legal</h3>
                 <a href="mailto:amish83@gmail.com">Email: amish83@gmail.com</a>
                 <p style="margin-top: 1rem; font-size: 0.9rem;">Licensed under Creative Commons Attribution 4.0 International</p>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem;">All information verified as of December 2025. Parents must verify current details with providers.</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Amish Shah. All rights reserved. | Educational content for non-commercial use.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.85rem;"><strong>Disclaimer:</strong> This playbook is for educational purposes only. The author is not affiliated with any course providers and receives no compensation. Parents must independently verify all information before enrollment.</p>
+            <p>&copy; 2025 Amish Shah. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;"><strong>Disclaimer:</strong> This playbook is for educational purposes only. The author is not affiliated with any course providers. Parents must independently verify all information before enrollment.</p>
         </div>
     </footer>
 
     <script>
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('.page-section');
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinksContainer = document.querySelector('.nav-links');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinksContainer.classList.toggle('active');
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-                
-                navLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-                
-                sections.forEach(section => {
-                    section.classList.remove('active');
-                    if (section.id === targetId) {
-                        section.classList.add('active');
-                    }
-                });
-
-                navLinksContainer.classList.remove('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        });
-
-        const accordionHeaders = document.querySelectorAll('.accordion-header');
-        accordionHeaders.forEach(header => {
-            header.addEventListener('click', () => {
-                const item = header.parentElement;
-                const wasActive = item.classList.contains('active');
-                
-                const accordionGroup = item.parentElement;
-                accordionGroup.querySelectorAll('.accordion-item').forEach(i => {
-                    i.classList.remove('active');
-                });
-                
-                if (!wasActive) {
-                    item.classList.add('active');
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show target section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Update nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + sectionId) {
+                    link.classList.add('active');
                 }
             });
+            
+            // Close mobile menu
+            document.querySelector('.nav-links').classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        });
-
+        // Filter courses function
         function filterCourses(filter) {
             const courses = document.querySelectorAll('.course-card');
             const filterBtns = document.querySelectorAll('.filter-btn');
             
+            // Update active button
             filterBtns.forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
             
+            // Filter courses
             courses.forEach(course => {
+                const type = course.getAttribute('data-type');
+                const region = course.getAttribute('data-region');
+                
                 if (filter === 'all') {
                     course.style.display = 'block';
-                } else if (filter === 'free' && course.dataset.type === 'free') {
+                } else if (filter === 'free' && type === 'free') {
                     course.style.display = 'block';
-                } else if (filter === 'paid' && course.dataset.type === 'paid') {
+                } else if (filter === 'paid' && type === 'paid') {
                     course.style.display = 'block';
-                } else if (course.dataset.region === filter) {
+                } else if (filter === region) {
                     course.style.display = 'block';
                 } else {
                     course.style.display = 'none';
                 }
             });
         }
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href.startsWith('#') && href !== '#') {
-                    e.preventDefault();
-                    const targetId = href.substring(1);
-                    const targetLink = document.querySelector(`.nav-link[href="#${targetId}"]`);
-                    if (targetLink) {
-                        targetLink.click();
-                    }
-                }
-            });
-        });
     </script>
 </body>
 </html>
