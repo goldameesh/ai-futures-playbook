@@ -641,6 +641,31 @@
             font-size: 0.9rem;
         }
 
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--royal-blue);
+            background: var(--white);
+            color: var(--royal-blue);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--royal-blue);
+            color: var(--white);
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -1209,7 +1234,7 @@
 
         <!-- Courses Section -->
         <section id="courses" class="page-section">
-            <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem;">Complete Course Directory</h2>
+            <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem; text-align: center;">Complete Course Directory</h2>
 
             <div class="disclaimer">
                 <strong>⚠️ CRITICAL: Course Verification Requirements</strong>
@@ -1235,6 +1260,455 @@
                     <li>✓ Ensure the course matches your child's current skill level</li>
                     <li>✓ Ask about data privacy and child safety policies</li>
                 </ul>
+            </div>
+
+            <h3 style="color: var(--royal-blue); margin: 2rem 0 1rem; text-align: center;">Filter Courses by Type & Region</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterCourses('all')">All Courses</button>
+                <button class="filter-btn" onclick="filterCourses('free')">Free Only</button>
+                <button class="filter-btn" onclick="filterCourses('paid')">Paid Only</button>
+                <button class="filter-btn" onclick="filterCourses('global')">Global</button>
+                <button class="filter-btn" onclick="filterCourses('india')">India</button>
+                <button class="filter-btn" onclick="filterCourses('uae')">UAE</button>
+            </div>
+
+            <div id="courseDirectory">
+                <h3 style="color: var(--royal-blue); margin: 2rem 0 1rem;">🌍 Global Free Courses</h3>
+                
+                <div class="course-card" data-type="free" data-region="global">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>Code.org - AI for Oceans</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 6-8 hours</span>
+                                <span><i class="fas fa-users"></i> Ages 8-10</span>
+                                <span><i class="fas fa-globe"></i> Global</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-free">FREE</span>
+                            <span class="badge badge-verified">✓ Verified</span>
+                        </div>
+                    </div>
+                    <p class="course-description">Ocean-themed introduction to AI and machine learning. Students train AI to recognize fish species while learning about ocean conservation. Available in 45+ languages.</p>
+                    <ul class="course-features">
+                        <li>Self-paced learning</li>
+                        <li>No coding experience required</li>
+                        <li>Used in 67,000+ schools worldwide</li>
+                        <li>Certificate of completion</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">FREE</div>
+                        <a href="https://code.org/oceans" target="_blank" rel="noopener" class="course-link">Start Learning →</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-type="free" data-region="global">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>Hour of AI by CSforALL</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 1 hour</span>
+                                <span><i class="fas fa-users"></i> Ages 8+</span>
+                                <span><i class="fas fa-globe"></i> Global</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-free">FREE</span>
+                            <span class="badge badge-verified">✓ Verified</span>
+                        </div>
+                    </div>
+                    <p class="course-description">Quick introduction to AI concepts through interactive games and unplugged activities. Perfect for beginners.</p>
+                    <ul class="course-features">
+                        <li>Unplugged options available</li>
+                        <li>Ethics-focused activities</li>
+                        <li>Backed by NSF and ISTE</li>
+                        <li>Teacher guides included</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">FREE</div>
+                        <a href="https://www.hourofai.org/" target="_blank" rel="noopener" class="course-link">Start Learning →</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-type="free" data-region="global">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>MIT Day of AI</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 10-15 hours</span>
+                                <span><i class="fas fa-users"></i> Ages 10-14</span>
+                                <span><i class="fas fa-globe"></i> Global</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-free">FREE</span>
+                            <span class="badge badge-verified">✓ MIT</span>
+                        </div>
+                    </div>
+                    <p class="course-description">Comprehensive AI curriculum from MIT Media Lab covering bias, ethics, and hands-on machine learning projects with real-world case studies.</p>
+                    <ul class="course-features">
+                        <li>Real-world case studies</li>
+                        <li>Bias detection projects</li>
+                        <li>Teacher guides for home use</li>
+                        <li>Modular learning paths</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">FREE</div>
+                        <a href="https://dayofai.org/" target="_blank" rel="noopener" class="course-link">Start Learning →</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-type="free" data-region="global">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>AI4K12 - Five Big Ideas</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> Self-paced</span>
+                                <span><i class="fas fa-users"></i> Ages 10+</span>
+                                <span><i class="fas fa-globe"></i> Global</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-free">FREE</span>
+                            <span class="badge badge-verified">✓ AAAI & CSTA</span>
+                        </div>
+                    </div>
+                    <p class="course-description">Framework covering perception, representation, learning, interaction, and societal impact of AI.</p>
+                    <ul class="course-features">
+                        <li>AAAI & CSTA partnership</li>
+                        <li>Comprehensive AI concepts</li>
+                        <li>Excellent supplementary resource</li>
+                        <li>Educator-created content</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">FREE</div>
+                        <a href="https://ai4k12.org/" target="_blank" rel="noopener" class="course-link">Start Learning →</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-type="free" data-region="global">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>Elements of AI</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 30 hours (6 weeks)</span>
+                                <span><i class="fas fa-users"></i> Ages 13+</span>
+                                <span><i class="fas fa-globe"></i> Global</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-free">FREE</span>
+                            <span class="badge badge-verified">✓ University of Helsinki</span>
+                        </div>
+                    </div>
+                    <p class="course-description">Comprehensive AI fundamentals from University of Helsinki. 1+ million students worldwide.</p>
+                    <ul class="course-features">
+                        <li>No coding required</li>
+                        <li>EU-backed initiative</li>
+                        <li>1+ million students</li>
+                        <li>Excellent theory foundation</li>
+                        <li>Certificate available</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">FREE</div>
+                        <a href="https://www.elementsofai.com/" target="_blank" rel="noopener" class="course-link">Start Learning →</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-type="free" data-region="global">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>Google Education AI Resources (Curated)</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> Self-paced</span>
+                                <span><i class="fas fa-users"></i> Ages 8-11</span>
+                                <span><i class="fas fa-globe"></i> Global</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-free">FREE</span>
+                            <span class="badge badge-verified">✓ Google</span>
+                        </div>
+                    </div>
+                    <p class="course-description"><strong>Note:</strong> This is a curated collection of Google Education AI resources, not a single official program. Parents should explore available resources at edu.google.com and select age-appropriate materials.</p>
+                    <ul class="course-features">
+                        <li>Parent-managed Google account recommended</li>
+                        <li>Various interactive resources available</li>
+                        <li>COPPA-compliant when using Family Link</li>
+                        <li>Privacy-focused design</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">FREE</div>
+                        <a href="https://edu.google.com/" target="_blank" rel="noopener" class="course-link">Explore Resources →</a>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--royal-blue); margin: 3rem 0 1rem;">💰 Global Paid Courses</h3>
+
+                <div class="course-card" data-type="paid" data-region="global">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>Inspirit AI - Scholars Program</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 25+ hours</span>
+                                <span><i class="fas fa-users"></i> Ages 13-18</span>
+                                <span><i class="fas fa-globe"></i> Global</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-paid">PAID</span>
+                            <span class="badge badge-verified">✓ Stanford/MIT Instructors</span>
+                        </div>
+                    </div>
+                    <p class="course-description">Advanced ML ethics and real projects taught by Stanford and MIT instructors. <strong>Note:</strong> This is a paid program (not an official Stanford/MIT program). Scholarships may be available. 10,000+ alumni network.</p>
+                    <ul class="course-features">
+                        <li>Stanford/MIT instructors (not official university program)</li>
+                        <li>Capstone project support</li>
+                        <li>College-prep elements</li>
+                        <li>Verify current pricing and scholarship availability</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">~$900-$1,850+ - Verify pricing & scholarships</div>
+                        <a href="https://www.inspiritai.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-type="paid" data-region="global">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>Google AI Essentials (Coursera)</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 5 hours</span>
+                                <span><i class="fas fa-users"></i> Ages 14+</span>
+                                <span><i class="fas fa-globe"></i> Global</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-paid">PAID</span>
+                            <span class="badge badge-subsidized">May be subsidized</span>
+                            <span class="badge badge-verified">✓ Google</span>
+                        </div>
+                    </div>
+                    <p class="course-description">Generative AI fundamentals with real workplace scenarios. Part of Google Career Certificates. <strong>Note:</strong> Typically requires Coursera subscription (~$49/month). May be free via some schools/employers or pilot programs.</p>
+                    <ul class="course-features">
+                        <li>Generative AI focus</li>
+                        <li>Prompting techniques</li>
+                        <li>Ethics and responsibility</li>
+                        <li>Certificate upon completion</li>
+                        <li>Check if your school/employer provides free access</li>
+                        <li>Verify current Coursera pricing</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">Coursera subscription required (~$49/mo) - Check pricing</div>
+                        <a href="https://www.coursera.org/learn/google-ai-essentials" target="_blank" rel="noopener" class="course-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--royal-blue); margin: 3rem 0 1rem;">🇮🇳 India - Paid Courses</h3>
+
+                <div class="course-card" data-type="paid" data-region="india">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>Henry Harvin - AI for Kids</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 20 hours</span>
+                                <span><i class="fas fa-users"></i> Ages 8-14</span>
+                                <span><i class="fas fa-map-marker-alt"></i> India</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-paid">PAID</span>
+                            <span class="badge badge-verified">✓ ISO Certified</span>
+                        </div>
+                    </div>
+                    <p class="course-description">Comprehensive AI fundamentals with live online classes. ISO 29990:2010 certified institution with 500+ verified reviews.</p>
+                    <ul class="course-features">
+                        <li>Live instructor-led sessions</li>
+                        <li>Certificate upon completion</li>
+                        <li>Lifetime access to materials</li>
+                        <li>EMI options available - verify current terms</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">~₹20,000 (~$240) - Verify pricing</div>
+                        <a href="https://www.henryharvin.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-type="paid" data-region="india">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>JetLearn - Personalized AI Foundations</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> Ongoing</span>
+                                <span><i class="fas fa-users"></i> Ages 6-16</span>
+                                <span><i class="fas fa-map-marker-alt"></i> India</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-paid">PAID</span>
+                            <span class="badge badge-verified">✓ Verified</span>
+                        </div>
+                    </div>
+                    <p class="course-description">1:1 personalized tutoring starting with unplugged activities. Featured in YourStory. 10,000+ students taught.</p>
+                    <ul class="course-features">
+                        <li>One-on-one instruction</li>
+                        <li>Customized learning path</li>
+                        <li>Flexible scheduling</li>
+                        <li>Free trial class available</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">~₹3,200/month (~$40) - Verify pricing</div>
+                        <a href="https://www.jetlearn.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-type="paid" data-region="india">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>Codingal - AI Prodigy Course</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 96 lessons (2 years)</span>
+                                <span><i class="fas fa-users"></i> Ages 9-14</span>
+                                <span><i class="fas fa-map-marker-alt"></i> India</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-paid">PAID</span>
+                            <span class="badge badge-verified">✓ YC-Backed</span>
+                        </div>
+                    </div>
+                    <p class="course-description">Comprehensive AI and ML curriculum with 1:1 live instruction. 500,000+ students worldwide. Y Combinator backed.</p>
+                    <ul class="course-features">
+                        <li>96 structured lessons over 2 years</li>
+                        <li>ML hands-on projects</li>
+                        <li>Python introduction</li>
+                        <li>Certificates at each level</li>
+                        <li>Free trial class available</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">~₹6,500-12,000/month (~$80-150) - Verify pricing</div>
+                        <a href="https://www.codingal.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-type="paid" data-region="india">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>WhiteHat Jr - AI Foundations</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 1 year</span>
+                                <span><i class="fas fa-users"></i> Ages 10-14</span>
+                                <span><i class="fas fa-map-marker-alt"></i> India</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-paid">PAID</span>
+                            <span class="badge badge-verified">✓ BYJU'S</span>
+                        </div>
+                    </div>
+                    <p class="course-description">1:1 live classes with curriculum designed by IIT and Stanford educators. Part of BYJU'S ecosystem.</p>
+                    <ul class="course-features">
+                        <li>One-on-one live instruction</li>
+                        <li>App building projects</li>
+                        <li>Project portfolio creation</li>
+                        <li>IIT/Stanford curriculum</li>
+                        <li>Flexible scheduling</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">~₹25,000/year (~$300) - Verify pricing</div>
+                        <a href="https://www.whitehatjr.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--royal-blue); margin: 3rem 0 1rem;">🇦🇪 UAE - Paid Courses</h3>
+
+                <div class="course-card" data-type="paid" data-region="uae">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>Brainy n Bright - STEM & AI Foundations</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> Per module</span>
+                                <span><i class="fas fa-users"></i> Ages 8-14</span>
+                                <span><i class="fas fa-map-marker-alt"></i> UAE (Dubai/Abu Dhabi)</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-paid">PAID</span>
+                            <span class="badge badge-verified">Verify KHDA Status</span>
+                        </div>
+                    </div>
+                    <p class="course-description">In-person STEM and AI classes in Dubai and Abu Dhabi with robotics integration and hands-on kits.</p>
+                    <ul class="course-features">
+                        <li>Hands-on robotics kits included</li>
+                        <li>In-person instruction</li>
+                        <li>Small class sizes</li>
+                        <li>Multiple UAE locations</li>
+                        <li>Verify current KHDA registration and pricing</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">~AED 1,100/module (~$300) - Verify pricing</div>
+                        <a href="https://brainynbright.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-type="paid" data-region="uae">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>Edoxi Training Institute - AI for Kids</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> Varies</span>
+                                <span><i class="fas fa-users"></i> Grades 8-10</span>
+                                <span><i class="fas fa-map-marker-alt"></i> UAE (Dubai/Sharjah)</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-paid">PAID</span>
+                            <span class="badge badge-verified">Verify KHDA Status</span>
+                        </div>
+                    </div>
+                    <p class="course-description">AI training with Python, ML projects, and industry partnerships. Available in Dubai and Sharjah.</p>
+                    <ul class="course-features">
+                        <li>Python programming</li>
+                        <li>ML project work</li>
+                        <li>Industry partnerships</li>
+                        <li>Dubai and Sharjah locations</li>
+                        <li>Verify current KHDA approval and pricing</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">~AED 1,300-1,700 (~$350-460) - Verify pricing</div>
+                        <a href="https://edoxi.com/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="course-card" data-type="paid" data-region="uae">
+                    <div class="course-header">
+                        <div class="course-title">
+                            <h4>The Coding School - AI Basics</h4>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> Varies</span>
+                                <span><i class="fas fa-users"></i> Ages 8-14</span>
+                                <span><i class="fas fa-map-marker-alt"></i> UAE (Dubai)</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-paid">PAID</span>
+                            <span class="badge badge-verified">Verify KHDA Status</span>
+                        </div>
+                    </div>
+                    <p class="course-description">In-person and hybrid AI classes using PictoBlox with robotics integration.</p>
+                    <ul class="course-features">
+                        <li>PictoBlox certified</li>
+                        <li>Hardware kits included</li>
+                        <li>Robotics integration</li>
+                        <li>Dubai locations</li>
+                        <li>Verify current KHDA approval and pricing</li>
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">~AED 800-1,200 (~$220-330) - Verify pricing</div>
+                        <a href="https://thecodingschool.ae/" target="_blank" rel="noopener" class="course-link">Learn More →</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1516,6 +1990,28 @@
                 item.classList.toggle('active');
             });
         });
+
+        function filterCourses(filter) {
+            const courses = document.querySelectorAll('.course-card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            courses.forEach(course => {
+                if (filter === 'all') {
+                    course.style.display = 'block';
+                } else if (filter === 'free' && course.dataset.type === 'free') {
+                    course.style.display = 'block';
+                } else if (filter === 'paid' && course.dataset.type === 'paid') {
+                    course.style.display = 'block';
+                } else if (course.dataset.region === filter) {
+                    course.style.display = 'block';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        }
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
