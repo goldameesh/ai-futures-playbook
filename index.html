@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive playbook for teaching AI literacy to children ages 8-14. Created by educational futurist Amish Shah.">
+    <meta name="keywords" content="AI education, children, STEM, coding, ethics, UAE, India, future skills">
+    <meta name="author" content="Amish Shah">
+    <title>AI Futures Playbook - Interactive Guide for Ages 8-14</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --royal-blue: #1e3a8a;
+            --light-blue: #3b82f6;
+            --gold: #fbbf24;
+            --dark-gold: #d97706;
+            --white: #ffffff;
+            --light-gray: #f3f4f6;
+            --dark-gray: #1f2937;
+            --text-gray: #4b5563;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--light-gray);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--royal-blue) 0%, var(--light-blue) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--royal-blue) 0%, var(--light-blue) 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--royal-blue);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--royal-blue);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid var(--gold);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(30, 58, 138, 0.2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            color: var(--royal-blue);
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .phase-card {
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+            border-left: 6px solid var(--gold);
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .phase-number {
+            background: var(--royal-blue);
+            color: var(--gold);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .phase-title h2 {
+            color: var(--royal-blue);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .phase-subtitle {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .accordion {
+            margin: 1rem 0;
+        }
+
+        .accordion-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .accordion-header {
+            background: var(--royal-blue);
+            color: var(--white);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .accordion-header:hover {
+            background: var(--light-blue);
+        }
+
+        .accordion-header h3 {
+            margin: 0;
+            color: var(--white);
+        }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 2000px;
+            padding: 1.5rem;
+        }
+
+        .interactive-box {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--royal-blue) 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 16px rgba(30, 58, 138, 0.3);
+        }
+
+        .interactive-box h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .checklist li:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .checklist input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .resource-table {
+            width: 100%;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .resource-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .resource-table th {
+            background: var(--royal-blue);
+            color: var(--gold);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .resource-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .resource-table tr:hover {
+            background: var(--light-gray);
+        }
+
+        .disclaimer {
+            background: #fef3c7;
+            border-left: 4px solid var(--dark-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            margin: 0.5rem 0;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            header, footer, .cta-buttons, .mobile-menu-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <span>🚀</span>
+                <span>AI Futures Playbook</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#phases" class="nav-link">Learning Phases</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
+                <li><a href="#tools" class="nav-link">Interactive Tools</a></li>
+                <li><a href="#parents" class="nav-link">For Parents</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Unlocking AI Futures</h1>
+            <p>A Realistic, Interactive Playbook for Young Minds Ages 8-14</p>
+            <p style="font-size: 1rem; opacity: 0.9;">By Amish Shah | Educational Futurist</p>
+            <div class="cta-buttons">
+                <a href="#phases" class="btn btn-primary">Start Your Journey</a>
+                <a href="#resources" class="btn btn-secondary">Explore Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="home" class="page-section active">
+            <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; text-align: center; margin-bottom: 2rem;">Why AI Matters Now</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>170 Million Jobs by 2030</h3>
+                    <p>According to the World Economic Forum's Future of Jobs Report 2025, AI will create 170 million new jobs worldwide.</p>
+                    <small style="color: var(--text-gray);">Source: WEF 2025</small>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3>86% Education Adoption</h3>
+                    <p>Organizations worldwide are already using AI in education, transforming how we learn and teach.</p>
+                    <small style="color: var(--text-gray);">Source: Microsoft 2025</small>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌍</div>
+                    <h3>Global Curriculum Alignment</h3>
+                    <p>UAE mandates AI from kindergarten (2025-26). India introduces AI from Class 3 (2026-27).</p>
+                    <small style="color: var(--text-gray);">Source: UAE MoE, India NCERT</small>
+                </div>
+            </div>
+
+            <div class="interactive-box">
+                <h3>🎯 Your 3-Year Journey at a Glance</h3>
+                <p><strong>Year 1 (Ages 8-10):</strong> Sparking Curiosity - Unplugged activities, pattern recognition, basic ethics</p>
+                <p><strong>Year 2 (Ages 11-12):</strong> Hands-On Exploration - Visual coding, bias detection, interactive projects</p>
+                <p><strong>Year 3 (Ages 13-14):</strong> Adaptive Innovation - Real-world solutions, capstone projects, community impact</p>
+                <p style="margin-top: 1rem;"><strong>Weekly Commitment:</strong> 2-3 hours | <strong>Focus:</strong> Adaptability over mastery</p>
+            </div>
+
+            <div class="disclaimer">
+                <strong>⚖️ Legal Disclaimer:</strong> This playbook is for educational purposes only. All course recommendations are based on publicly available information as of December 2025. Parents should verify current pricing, availability, and age-appropriateness before enrollment. The author is not affiliated with any course providers mentioned. All statistics cited are from verified sources (WEF, Microsoft, UNESCO, government education bodies). This content is provided under Creative Commons Attribution 4.0 International License.
+            </div>
+        </section>
+
+        <section id="about" class="page-section">
+            <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem;">About This Playbook</h2>
+            
+            <div class="card">
+                <h3>Foreword by Amish Shah</h3>
+                <p>In a world where artificial intelligence is reshaping every facet of life, preparing our children isn't just an option; it's essential.</p>
+                <p>As an educational futurist, I've dedicated my career to bridging technology and human potential. This playbook draws from global best practices, including the World Economic Forum's insights and pioneering curricula in the UAE and India.</p>
+                <p><strong>Why this playbook?</strong> Because AI evolves at breakneck speed, but the real power lies in humans who can guide it responsibly.</p>
+            </div>
+
+            <h3 style="color: var(--royal-blue); margin: 2rem 0 1rem;">Core Principles</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">⚖️</div>
+                    <h3>Ethics First</h3>
+                    <p>Every activity emphasizes fairness, bias detection, and responsible AI use.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h3>Adaptability Over Mastery</h3>
+                    <p>Tools change, but human ingenuity endures. We focus on learning how to learn.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎨</div>
+                    <h3>Creativity & Critical Thinking</h3>
+                    <p>Build, break, rebuild. Experimentation and failure are celebrated.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌱</div>
+                    <h3>Age-Appropriate Progression</h3>
+                    <p>Start offline with wonder, progress to hands-on tools, culminate in real-world impact.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="phases" class="page-section">
+            <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; text-align: center; margin-bottom: 2rem;">3-Year Learning Journey</h2>
+
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">1</div>
+                    <div class="phase-title">
+                        <h2>Sparking Curiosity</h2>
+                        <p class="phase-subtitle">Ages 8-10 | Year 1: December 2025 - November 2026</p>
+                    </div>
+                </div>
+                
+                <p><strong>Focus:</strong> Unplugged activities, pattern recognition, basic ethics</p>
+                <p><strong>Weekly Time:</strong> 2 hours</p>
+                
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Core Activities</h3>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li><strong>Pattern Detectives:</strong> Sort toys/objects to understand how AI learns from data</li>
+                                <li><strong>Ethics Stories:</strong> Role-play scenarios about fair AI</li>
+                                <li><strong>Real-World Hunt:</strong> Find patterns in weather, family routines, nature</li>
+                                <li><strong>AI Adventure Journal:</strong> Weekly reflections on discoveries</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Recommended Courses</h3>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <h4>Free Options:</h4>
+                            <ul>
+                                <li><strong>Code.org - AI for Oceans</strong> (6-8 hours)</li>
+                                <li><strong>Hour of AI by CSforALL</strong> (1 hour)</li>
+                                <li><strong>Google AI Explorers</strong> (4-6 hours)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Milestones</h3>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <ul class="checklist">
+                                <li><input type="checkbox"> Month 3: Created "Fair Robot Friend" rules poster</li>
+                                <li><input type="checkbox"> Month 6: Completed one free course</li>
+                                <li><input type="checkbox"> Month 9: Built a pattern prediction game</li>
+                                <li><input type="checkbox"> Month 12: Filled 50+ journal entries</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">2</div>
+                    <div class="phase-title">
+                        <h2>Hands-On Exploration</h2>
+                        <p class="phase-subtitle">Ages 11-12 | Year 2: December 2026 - November 2027</p>
+                    </div>
+                </div>
+                
+                <p><strong>Focus:</strong> Visual coding, bias detection, interactive projects</p>
+                <p><strong>Weekly Time:</strong> 2.5 hours</p>
+                
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Core Projects</h3>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <ul>
+                                <li><strong>Scratch Game Bot:</strong> Create a game where AI learns from player behavior</li>
+                                <li><strong>Bias Detective Challenge:</strong> Test real systems for fairness</li>
+                                <li><strong>Fair System Design:</strong> Build a recommendation system with fairness rules</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-number">3</div>
+                    <div class="phase-title">
+                        <h2>Adaptive Innovation</h2>
+                        <p class="phase-subtitle">Ages 13-14 | Year 3: December 2027 - November 2028</p>
+                    </div>
+                </div>
+                
+                <p><strong>Focus:</strong> Real-world solutions, capstone projects, community impact</p>
+                <p><strong>Weekly Time:</strong> 3 hours</p>
+                
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Capstone Project Framework</h3>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p><strong>Months 1-3:</strong> Discover & Define - Community needs assessment, problem selection, ethics review</p>
+                            <p><strong>Months 4-8:</strong> Build & Test - Prototype development, user testing, refinement</p>
+                            <p><strong>Months 9-12:</strong> Launch & Reflect - Community showcase, impact measurement, portfolio building</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="page-section">
+            <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem;">Verified Resources</h2>
+
+            <div class="interactive-box">
+                <h3>📚 All Resources Are From Trusted Sources</h3>
+                <p>Every course, statistic, and recommendation has been verified from official sources as of December 2025.</p>
+            </div>
+
+            <h3 style="color: var(--royal-blue); margin: 2rem 0 1rem;">Free Learning Platforms</h3>
+            <div class="resource-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Platform</th>
+                            <th>Age Range</th>
+                            <th>Focus</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Code.org - AI for Oceans</strong></td>
+                            <td>8-10 years</td>
+                            <td>Pattern recognition</td>
+                            <td>6-8 hours</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MIT Day of AI</strong></td>
+                            <td>10-14 years</td>
+                            <td>Bias projects, ethics</td>
+                            <td>10-15 hours</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google AI Essentials</strong></td>
+                            <td>14+ years</td>
+                            <td>Generative AI</td>
+                            <td>5 hours</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="tools" class="page-section">
+            <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem;">Interactive Tools & Templates</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">📓</div>
+                    <h3>AI Adventure Journal</h3>
+                    <p>Weekly reflection template to track discoveries and fairness questions.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔍</div>
+                    <h3>Bias Audit Worksheet</h3>
+                    <p>Framework for testing real AI systems and documenting bias findings.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h3>Capstone Project Proposal</h3>
+                    <p>Complete proposal template for Phase 3 community impact projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="parents" class="page-section">
+            <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; margin-bottom: 2rem;">The Parent's Compass</h2>
+
+            <div class="interactive-box">
+                <h3>🧭 You Don't Need to Be a Tech Expert</h3>
+                <p>Just bring curiosity and consistency. This section provides everything you need to guide your child's AI learning journey.</p>
+            </div>
+
+            <h3 style="color: var(--royal-blue); margin: 2rem 0 1rem;">Conversation Starters by Age</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Ages 8-10 (Phase 1)</h3>
+                    <p><strong>"I noticed..."</strong> How does Alexa understand you?</p>
+                    <p><strong>"What if..."</strong> What if a robot was your teacher?</p>
+                </div>
+                <div class="card">
+                    <h3>Ages 11-12 (Phase 2)</h3>
+                    <p><strong>"How does..."</strong> How does Spotify know what music you'll like?</p>
+                    <p><strong>"Should we..."</strong> Should AI grade homework?</p>
+                </div>
+                <div class="card">
+                    <h3>Ages 13-14 (Phase 3)</h3>
+                    <p><strong>"What's your take..."</strong> Is AI-generated art real art?</p>
+                    <p><strong>"If you designed..."</strong> How would you design an AI tutor?</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page-section">
+            <h2 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif; text-align: center; margin-bottom: 2rem;">Get in Touch</h2>
+
+            <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <div class="card-icon">✉️</div>
+                <h3>Questions? Feedback? Success Stories?</h3>
+                <p>I'd love to hear about your AI learning journey!</p>
+                <p style="margin: 2rem 0;">
+                    <strong>Email:</strong> 
+                    <a href="mailto:amish83@gmail.com" style="color: var(--royal-blue); font-size: 1.2rem;">amish83@gmail.com</a>
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--light-gray); border-radius: 15px;">
+                <h3 style="color: var(--royal-blue); font-family: 'Montserrat', sans-serif;">Final Message</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; max-width: 700px; margin: 1rem auto;">
+                    "This playbook is your starting line, not your finish line. You're not preparing for a future with AI. You're creating it."
+                </p>
+                <p style="margin-top: 2rem; font-weight: 600; color: var(--royal-blue);">
+                    — Amish Shah<br>
+                    <span style="font-weight: 400; font-size: 0.9rem;">Educational Futurist | December 2025</span>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#phases">Learning Phases</a>
+                <a href="#resources">Resources</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact & Legal</h3>
+                <a href="mailto:amish83@gmail.com">Email: amish83@gmail.com</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">Licensed under Creative Commons Attribution 4.0</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Amish Shah. All rights reserved. Educational content for non-commercial use.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.page-section');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinksContainer = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === targetId) {
+                        section.classList.add('active');
+                    }
+                });
+
+                navLinksContainer.classList.remove('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                const accordionGroup = item.parentElement;
+                accordionGroup.querySelectorAll('.accordion-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+        checkboxes.forEach((checkbox, index) => {
+            const savedState = localStorage.getItem(`checkbox-${index}`);
+            if (savedState === 'true') {
+                checkbox.checked = true;
+            }
+            
+            checkbox.addEventListener('change', () => {
+                localStorage.setItem(`checkbox-${index}`, checkbox.checked);
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#') && href !== '#') {
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const targetLink = document.querySelector(`.nav-link[href="#${targetId}"]`);
+                    if (targetLink) {
+                        targetLink.click();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
